@@ -1,5 +1,5 @@
 image:
-  file: lake-packages/mathlib/.docker/gitpod/Dockerfile
+  file: Dockerfile
 
 vscode:
   extensions:

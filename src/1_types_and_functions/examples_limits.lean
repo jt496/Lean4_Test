@@ -36,7 +36,7 @@ by
   specialize hA n Alen 
   specialize hB n (le_trans (le_max_right A B) hn) 
   -- Need to rearrange terms -- use the `ring` tactic 
-  have rearrange: x n + y n  - (s + t) = (x n - s) + (y n - t) := by ring
+  have rearrange: x n + y n  - (s + t) = x n - s + (y n - t) := add_sub_add_comm _ _ _ _
   rw [rearrange]  -- rewrite this rearranged expression in the goal
   -- Now apply triangle-inequality
   have tri: |x n  - s + (y n - t)| ≤ |x n - s| + |y n - t| := abs_add _ _
@@ -44,4 +44,4 @@ by
   rw [← add_halves ε]
   apply add_lt_add hA hB
 
--- #print sum_limits
+#print sum_limits

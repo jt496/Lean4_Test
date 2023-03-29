@@ -101,7 +101,7 @@ simp only [Nat.cast_zero, zero_mul]
 
 
 
-lemma sum4Q (n : ℕ ) : ∑ i in range n.succ, (i : ℚ)  = (n*(n + 1)*(2*n + 1)*(3*n^2 + 3*n - 1))/30:=by
+lemma sum4Q (n : ℕ ) : ∑ i in range n.succ, (i^4 : ℚ)  = (n*(n + 1)*(2*n + 1)*(3*n^2 + 3*n - 1))/30:=by
   induction' n with n hn
   rw [range_one,sum_singleton,Nat.cast_zero,zero_mul,zero_mul,
         zero_mul,zero_div,zero_pow zero_lt_four]
